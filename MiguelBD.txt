@@ -1,0 +1,35 @@
+-- public.cliente definition
+
+-- Drop table
+
+-- DROP TABLE public.cliente;
+
+CREATE TABLE public.cliente (
+	id serial4 NOT NULL,
+	idciudad int4 NULL,
+	nombre varchar(30) NOT NULL,
+	apellido varchar(30) NOT NULL,
+	ndocumento varchar(15) NOT NULL,
+	telefono varchar(15) NULL,
+	email varchar(30) NOT NULL,
+	fnacimiento varchar(20) NOT NULL,
+	ciudad varchar(30) NULL,
+	nacionalidad varchar(30) NOT NULL,
+	CONSTRAINT cliente_pk PRIMARY KEY (id)
+);
+CREATE UNIQUE INDEX cliente_id_idx ON public.cliente USING btree (id);
+
+
+-- public.ciudad definition
+
+-- Drop table
+
+-- DROP TABLE public.ciudad;
+
+CREATE TABLE public.ciudad (
+	id serial4 NOT NULL,
+	ciudad varchar(30) NOT NULL,
+	estado varchar(30) NULL,
+	CONSTRAINT ciudad_pk PRIMARY KEY (id)
+);
+CREATE UNIQUE INDEX ciudad_id_idx ON public.ciudad USING btree (id);
